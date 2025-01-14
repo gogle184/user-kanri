@@ -1,5 +1,5 @@
-import { FC, memo } from "react"
+import { type FC, memo } from "react";
 
 export const Setting: FC = memo(() => {
-    return <p>Settingです</p>
-})
+	return <p>Settingです</p>;
+});

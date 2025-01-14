@@ -1,12 +1,12 @@
-import { createSystem, defaultConfig } from "@chakra-ui/react"
+import { createSystem, defaultConfig } from "@chakra-ui/react";
 
 const theme = createSystem(defaultConfig, {
-    globalCss: {
-      "html, body": {
-        backgroundColor: "gray.100",
-        color: "gray.800",
-      },
-    },
-})
+	globalCss: {
+		"html, body": {
+			backgroundColor: "gray.100",
+			color: "gray.800",
+		},
+	},
+});
 
-export default theme
+export default theme;

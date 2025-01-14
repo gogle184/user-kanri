@@ -1,5 +1,5 @@
-import { FC, memo } from "react"
+import { type FC, memo } from "react";
 
 export const Login: FC = memo(() => {
-    return <p>Login</p>
-})
+	return <p>Login</p>;
+});
