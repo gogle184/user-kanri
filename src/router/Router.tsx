@@ -2,8 +2,8 @@ import { type FC, memo } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Login } from "../components/pages/Login";
 import { Page404 } from "../components/pages/Page404";
-import { HomeRoutes } from "./HomeRoutes";
 import { HeaderLayout } from "../components/templates/HeaderLayout";
+import { HomeRoutes } from "./HomeRoutes";
 
 export const Router: FC = memo(() => {
 	return (
@@ -14,11 +14,7 @@ export const Router: FC = memo(() => {
 					<Route
 						key={route.path}
 						path={route.path}
-						element={
-							<HeaderLayout>
-								{route.element}
-							</HeaderLayout>
-						}
+						element={<HeaderLayout>{route.element}</HeaderLayout>}
 					/>
 				))}
 			</Route>
