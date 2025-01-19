@@ -3,8 +3,14 @@ import { Stack, Input } from "@chakra-ui/react";
 import { DialogContent, DialogHeader, DialogTitle, DialogBody, DialogFooter, DialogCloseTrigger } from "@/components/ui/dialog";
 import { Field } from "@/components/ui/field";
 
+import type { User } from "@/types/api/user";
 
-export const UserDetailModal: FC = memo(() => {
+type Props = {
+  user: User | null;
+};
+
+export const UserDetailModal: FC<Props> = memo((props) => {
+  const { user } = props;
   return(
     <DialogContent>
     <DialogHeader>
@@ -13,16 +19,16 @@ export const UserDetailModal: FC = memo(() => {
     <DialogBody mx={4}>
       <Stack gap={4}>
         <Field label="名前">
-          <Input placeholder="名前" disabled/>
+          <Input placeholder={user?.username} disabled/>
         </Field>
         <Field label="フルネーム">
-          <Input placeholder="フルネーム" disabled/>
+          <Input placeholder={user?.name} disabled/>
         </Field>
         <Field label="Mail">
-          <Input placeholder="Mail" disabled/>
+          <Input placeholder={user?.email} disabled/>
         </Field>
         <Field label="TEL">
-          <Input placeholder="TEL" disabled/>
+          <Input placeholder={user?.phone} disabled/>
         </Field>
       </Stack>
     </DialogBody>
