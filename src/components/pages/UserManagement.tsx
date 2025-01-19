@@ -6,10 +6,13 @@ import { DialogRoot, DialogTrigger } from "@/components/ui/dialog";
 import { UserCard } from "@/components/organisms/user/UserCard";
 import { useAllUsers } from "../../hooks/useAllUsers";
 import { useSelectUser } from "@/hooks/useSelectUser";
+import { useLoginUser } from "@/hooks/useLoginUser";
 
 export const UserManagement: FC = memo(() => {
 	const { getAllUsers, loading, users } = useAllUsers();
+  const { loginUser } = useLoginUser();
   const { selectedUser, onSelectUser } = useSelectUser();
+
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		getAllUsers();
@@ -37,7 +40,7 @@ export const UserManagement: FC = memo(() => {
           </HStack>
         )}
       </DialogTrigger>
-      <UserDetailModal user={selectedUser}/>
+      <UserDetailModal user={selectedUser} isAdmin={loginUser?.isAdmin}/>
     </DialogRoot>
 	);
 });
